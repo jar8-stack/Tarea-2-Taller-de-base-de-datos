@@ -119,7 +119,33 @@ SELECT MGR, ename from emp WHERE  MGR IS NOT NULL ORDER BY  ename DESC;
 SELECT * FROM emp WHERE job IN(SELECT job FROM EMP WHERE deptno in (SELECT deptno FROM EMP WHERE deptno in(SELECT deptno FROM dept WHERE loc='CHICAGO')));
 
 --68
+SELECT job, COUNT(job) AS Numero_Empleados FROM EMP GROUP BY JOB
 
+--69
+SELECT SUM(e.sal) AS Suma_Salario,  d.dname
+FROM emp e INNER JOIN dept d
+ON e.deptno= d.deptno
+GROUP BY d.dname;
+
+--70
+SELECT dname, deptno from dept WHERE deptno NOT IN(SELECT deptno FROM EMP);
+
+--71
+SELECT * FROM EMP WHERE empno NOT IN(SELECT mgr FROM EMP GROUP BY mgr);
+
+--72
+SELECT d.dname as Nombre_Departamento, COUNT(e.deptno) AS Numero_Empleados
+FROM emp e INNER JOIN dept d
+ON e.deptno= d.deptno
+GROUP BY d.dname;
 
 --73
 SELECT * FROM EMP WHERE deptno in(SELECT deptno FROM dept WHERE loc='CHICAGO') ORDER BY comm DESC;
+
+--74
+SELECT * FROM EMP WHERE deptno IN(SELECT deptno FROM dept WHERE loc='DALLAS' OR loc='NEW YORK');
+
+--75
+SELECT mgr FROM EMP GROUP BY mgr
+
+SELECT ename as Nombre_Jefe FROM EMP WHERE empno IN(SELECT mgr FROM EMP GROUP BY mgr)
