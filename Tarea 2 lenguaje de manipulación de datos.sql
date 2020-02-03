@@ -103,3 +103,23 @@ select * from emp
 --62
 select * from emp where comm is not null;
 
+--63 
+SELECT COUNT(empno) as Numero_Empleados FROM EMP WHERE deptno=20;
+
+--64
+SELECT COUNT(empno) as Numero_Empleados, deptno FROM EMP GROUP BY deptno;
+
+--65
+SELECT job, deptno from emp WHERE deptno=10 or deptno=20;
+
+--66
+SELECT MGR, ename from emp WHERE  MGR IS NOT NULL ORDER BY  ename DESC;
+
+--67
+SELECT * FROM emp WHERE job IN(SELECT job FROM EMP WHERE deptno in (SELECT deptno FROM EMP WHERE deptno in(SELECT deptno FROM dept WHERE loc='CHICAGO')));
+
+--68
+
+
+--73
+SELECT * FROM EMP WHERE deptno in(SELECT deptno FROM dept WHERE loc='CHICAGO') ORDER BY comm DESC;
