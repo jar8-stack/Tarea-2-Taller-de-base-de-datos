@@ -174,3 +174,7 @@ ORDER BY MAX(sal) DESC;
 SELECT COUNT(*) AS Cantidad_Empleados, deptno FROM emp 
 GROUP BY deptno;
 
+--Nombres:
+--Jorge Said Serrano Soto
+--Loreto Alberto Ávila Basto
+--Carlos Ivan Aguero Perez
