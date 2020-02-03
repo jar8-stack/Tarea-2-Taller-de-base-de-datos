@@ -146,6 +146,31 @@ SELECT * FROM EMP WHERE deptno in(SELECT deptno FROM dept WHERE loc='CHICAGO') O
 SELECT * FROM EMP WHERE deptno IN(SELECT deptno FROM dept WHERE loc='DALLAS' OR loc='NEW YORK');
 
 --75
-SELECT mgr FROM EMP GROUP BY mgr
+SELECT ename AS Nombre_Empleado FROM EMP
 
 SELECT ename as Nombre_Jefe FROM EMP WHERE empno IN(SELECT mgr FROM EMP GROUP BY mgr)
+
+--76
+SELECT MAX(e.sal), d.dname 
+FROM emp e INNER JOIN dept d
+ON e.deptno= d.deptno
+GROUP BY d.dname;
+
+--78
+
+SELECT SUM(e.sal), d.dname 
+FROM EMP e INNER JOIN dept d
+ON e.deptno= d.deptno
+GROUP BY d.dname;
+
+
+--79
+SELECT TOP 2
+empno, MAX(sal) FROM EMP
+GROUP BY empno
+ORDER BY MAX(sal) DESC;
+
+--80
+SELECT COUNT(*) AS Cantidad_Empleados, deptno FROM emp 
+GROUP BY deptno;
+
