@@ -19,6 +19,21 @@ select empno from emp order by comm;
 --16
 --a
 select comm from emp;
+
+--17
+SELECT DISTINCT ename, comm FROM emp;
+
+--18
+SELECT DISTINCT ename, sal FROM emp;
+
+--19
+SELECT DISTINCT ename, comm FROM EMP;
+
+--20
+SELECT ename as Nombre, sal as Viejo_Salario,(sal+1000) as Nuevo_Salario, deptno as Numero_de_departamento FROM EMP WHERE deptno=30;
+
+
+
 --b
 -- select distinc comm from emp;
 
