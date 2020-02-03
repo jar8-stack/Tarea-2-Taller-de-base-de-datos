@@ -32,6 +32,25 @@ SELECT DISTINCT ename, comm FROM EMP;
 --20
 SELECT ename as Nombre, sal as Viejo_Salario,(sal+1000) as Nuevo_Salario, deptno as Numero_de_departamento FROM EMP WHERE deptno=30;
 
+--21
+SELECT ename as Nombre, sal as Viejo_Salario,(sal+1000) as Nuevo_Salario, deptno as Numero_de_departamento FROM EMP WHERE deptno=30;
+
+--22
+SELECT ename AS Nombre, sal as Salario, (sal/2) as Mitad_Salario, comm FROM emp WHERE comm>(sal/2);
+
+--23
+SELECT comm FROM emp where comm is null or comm=0 or comm<= ((25*sal)/100);
+
+
+--24
+SELECT ename as Nombre, sal as Salario FROM emp;
+
+--25 
+SELECT empno as Codigo, sal as Salario, comm as comm FROM EMP WHERE empno>7500
+
+--26
+SELECT ename as Nombre, ASCII(ename) FROM emp WHERE ASCII(ename)>=74;
+
 
 
 --b
