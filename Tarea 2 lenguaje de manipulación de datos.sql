@@ -1,4 +1,22 @@
-use tarea2
+use tarea2;
+--|1-8|--
+--1
+SELECT * FROM emp;
+--2
+SELECT * FROM dept;
+--3
+SELECT * FROM emp WHERE job = 'CLERK';
+--4
+SELECT * FROM emp WHERE job = 'CLERK' ORDER BY ename;
+--5
+
+--6
+SELECT empno, ename, sal FROM emp;
+--7
+SELECT dname FROM dept;
+--8
+SELECT dname FROM dept ORDER BY dname;
+
 -- |9-16| --
 --9
 select * from emp order by ename;
@@ -51,10 +69,44 @@ SELECT empno as Codigo, sal as Salario, comm as comm FROM EMP WHERE empno>7500
 --26
 SELECT ename as Nombre, ASCII(ename) FROM emp WHERE ASCII(ename)>=74;
 
+--|27-44|--
+--27
+SELECT sal, comm, (sal + comm) as SalarioTotal FROM emp ORDER BY empno;
+
+-- 29
+SELECT * FROM emp WHERE sal>1000 AND mgr = 7698;
+
+--30
+
+
+--32
+SELECT * FROM emp WHERE deptno = 30 AND ename NOT LIKE 'LA';
+
+--33
+SELECT * FROM emp WHERE mgr IS NULL;
+
+--34
+SELECT dname, loc FROM dept WHERE dname != 'RESEARCH' AND dname != 'SALES' ORDER BY loc;
+--35
+--36
+--37
+SELECT * FROM emp WHERE ename LIKE '_____';
+
+--38
+SELECT * FROM emp WHERE ename LIKE '_____' OR ename LIKE '______';
+--39
+SELECT * FROM emp WHERE ename LIKE '%A' AND sal>1000 OR comm IS NOT NULL AND deptno = 30;
+--40
+
+--41
+SELECT ename, sal, comm FROM emp WHERE sal BETWEEN comm/2 AND comm;
+--42
+--43
+SELECT ename, job FROM emp WHERE job LIKE '%MAN%' AND ename LIKE '%A';
 
 
 --b
--- select distinc comm from emp;
+select * from emp;
 
 -- |45-62|--
 
