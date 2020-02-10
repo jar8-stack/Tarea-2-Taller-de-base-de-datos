@@ -77,7 +77,7 @@ SELECT sal, comm, (sal + comm) as SalarioTotal FROM emp ORDER BY empno;
 SELECT * FROM emp WHERE sal>1000 AND mgr = 7698;
 
 --30
-
+SELECT ename FROM emp WHERE NOT(sal>100 AND mgr=7698);
 
 --32
 SELECT * FROM emp WHERE deptno = 30 AND ename NOT LIKE 'LA';
