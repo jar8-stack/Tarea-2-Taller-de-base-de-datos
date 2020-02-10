@@ -101,6 +101,7 @@ SELECT * FROM emp WHERE ename LIKE '%A' AND sal>1000 OR comm IS NOT NULL AND dep
 --41
 SELECT ename, sal, comm FROM emp WHERE sal BETWEEN comm/2 AND comm;
 --42
+SELECT ename, sal, comm FROM emp WHERE sal NOT BETWEEN comm/2 AND comm;
 --43
 SELECT ename, job FROM emp WHERE job LIKE '%MAN%' AND ename LIKE '%A';
 
