@@ -97,7 +97,7 @@ where len(d.loc) > 5 order by ename,loc desc;
 --59
 select * from emp  where sal >= (select avg(sal) from emp);
 --60
-select * from emp;
+select * from emp WHERE sal IN(SELECT MAX(sal) FROM EMP GROUP BY deptno) ORDER BY deptno;
 --61
 select * from emp
 --62
