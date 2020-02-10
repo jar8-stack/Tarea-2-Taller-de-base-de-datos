@@ -225,8 +225,9 @@ GROUP BY empno
 ORDER BY MAX(sal) DESC;
 
 --80
-SELECT COUNT(*) AS Cantidad_Empleados, deptno FROM emp 
-GROUP BY deptno;
+SELECT loc, COUNT(emp.empno) FROM dept INNER JOIN emp ON dept.deptno = emp.empno GROUP BY loc
+HAVING COUNT(emp.empno)>=4;
+
 
 --Nombres:
 --Jorge Said Serrano Soto
