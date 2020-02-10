@@ -214,7 +214,8 @@ SELECT TOP 1
 SUM(e.sal), d.dname 
 FROM EMP e INNER JOIN dept d
 ON e.deptno= d.deptno
-GROUP BY d.dname ORDER BY SUM(E.sal) DESC;
+GROUP BY d.dname, d.deptno
+ORDER BY SUM(E.sal) DESC;
 
 
 --79
