@@ -131,7 +131,7 @@ select max(sal) as MaxSalario,count(*) as Empleados, sum(comm) Comisiones  from 
 --52
 select * from emp where sal > (select sal from emp where empno = 7934) order by sal;
 --53
-select ename,job,sal from emp where sal > (select sal from emp where ename = 'ALLEN');
+select ename,job,sal from emp where sal >= ALL(select sal from emp where ename = 'ALLEN');
 --54
 select ename from emp order by ename desc;
 --55
